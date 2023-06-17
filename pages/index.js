@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="bg-black text-white min-h-screen w-full max-w-[1400px] xl mx-auto relative flex">
+      <div className={`bg-black text-white min-h-screen w-full max-w-[1400px] xl mx-auto relative flex ${!username && "blur-md cursor-not-allowed"}`}>
         <Sidebar />
         <PostFeed />
         <Trending />

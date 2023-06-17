@@ -1,10 +1,12 @@
 import Moment from "react-moment";
+import { useSelector } from "react-redux";
 export default function TweetHeader({
   username,
   name,
   text,
   timestamp,
   photoUrl,
+  image,
 }) {
   return (
     <div className="flex space-x-3 p-3">
@@ -21,6 +23,9 @@ export default function TweetHeader({
           <Moment fromNow>{timestamp}</Moment>
         </div>
         <span className="text-base font-normal">{text}</span>
+        {image && (
+          <img className="object-cover rounded-md mt-4 max-h-80 border border-gray-700 p-.5" src={image} />
+        )}
       </div>
     </div>
   );
